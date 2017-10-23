@@ -2,5 +2,7 @@ FROM nginx
 
 MAINTAINER Stephan Besser <stephan@openaip.net>
 
-COPY . /usr/share/nginx/html
-WORKDIR /usr/share/nginx/html
+RUN mkdir -p /var/www/html
+
+COPY . /var/www/html
+WORKDIR /var/www/html
