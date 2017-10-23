@@ -13,7 +13,7 @@
         "_createDirs": "mkdir -p ./web/fonts && mkdir -p ./web/styles/default",
         "_cleanDirs": "rm -rf ./web",
         "_resetDirs": "npm run _cleanDirs && npm run _createDirs",
-        "_buildStyles": "spritezero --ratio=1 ./web/styles/default/sprite ./src/mapstyles/default/sprites-src/ && spritezero --ratio=2 ./web/styles/default/sprite@2x ./src/mapstyles/default/sprites-src/ && cp ./src/mapstyles/default/style.json ./web/styles/default/style.json",
+        "_buildStyles": "spritezero --ratio=1 ./web/styles/default/sprite ./src/default/sprites-src/ && spritezero --ratio=2 ./web/styles/default/sprite@2x ./src/default/sprites-src/ && cp ./src/default/style.json ./web/styles/default/style.json",
         "build:styles": "npm run _resetDirs && npm run _buildStyles"
     }
 }
