@@ -4,16 +4,16 @@
         "Stephan Besser <stephan@openaip.net>"
     ],
     "description": "Worldwide aviation database",
-    "homepage": "http://www.openaip.net",
-    "private": true,
+    "homepage": "https://www.openaip.net",
+    "private": false,
     "dependencies": {
         "@mapbox/spritezero-cli": "^2.1.0"
     },
     "scripts": {
-        "_createDirs": "mkdir -p ./web/fonts && mkdir -p ./web/styles/default",
-        "_cleanDirs": "rm -rf ./web",
+        "_createDirs": "mkdir -p ./dist/fonts && mkdir -p ./dist/styles/default",
+        "_cleanDirs": "rm -rf ./dist",
         "_resetDirs": "npm run _cleanDirs && npm run _createDirs",
-        "_buildStyles": "spritezero --ratio=1 ./web/styles/default/sprite ./src/default/sprites-src/ && spritezero --ratio=2 ./web/styles/default/sprite@2x ./src/default/sprites-src/ && cp ./src/default/style.json ./web/styles/default/style.json",
+        "_buildStyles": "spritezero --ratio=1 ./dist/styles/default/sprite ./src/default/sprites-src/ && spritezero --ratio=2 ./dist/styles/default/sprite@2x ./src/default/sprites-src/ && cp ./src/default/style.json ./dist/styles/default/style.json",
         "build:styles": "npm run _resetDirs && npm run _buildStyles"
     }
 }
