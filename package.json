@@ -6,6 +6,7 @@
     "description": "Worldwide aviation database",
     "homepage": "https://www.openaip.net",
     "private": false,
+    "license": "MIT",
     "dependencies": {
         "@mapbox/spritezero-cli": "^2.1.0"
     },

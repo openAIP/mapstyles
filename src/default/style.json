@@ -21,7 +21,7 @@
       ]
     }
   },
-  "sprite": "https://staging.maps.openaip.net/styles/default/sprite",
+  "sprite": "https://staging.static.openaip.net/assets/dist/maps/styles/default/sprite",
   "glyphs": "https://free.tilehosting.com/fonts/{fontstack}/{range}.pbf?key=RiS4gsgZPZqeeMlIyxFo",
   "layers": [
     {
