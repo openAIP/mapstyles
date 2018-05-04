@@ -2863,7 +2863,7 @@
         "icon-allow-overlap": true,
         "icon-rotate": {
           "type": "identity",
-          "property": "runway_magnetic_heading"
+          "property": "runway_rotation"
         },
         "visibility": "visible",
         "icon-padding": 0
