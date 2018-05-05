@@ -21,7 +21,7 @@
             ]
         }
     },
-    "sprite":"https://staging.static.openaip.net/assets/dist/maps/styles/default/sprite"
+    "sprite":"https://staging.static.openaip.net/assets/dist/maps/styles/default/sprite",
     "glyphs": "mapbox://fonts/mapbox/{fontstack}/{range}.pbf",
     "layers": [
         {
