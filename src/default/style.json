@@ -3660,7 +3660,7 @@
         "icon-allow-overlap": false,
         "icon-rotate": {
           "type": "identity",
-          "property": "icon_rotation"
+          "property": "runway_rotation"
         }
       }
     },
