@@ -17,7 +17,7 @@
         "openaip": {
             "type": "vector",
             "tiles": [
-                "https://maps.openaip.net/data/openaip/{z}/{x}/{y}.pbf"
+                "https://staging.maps.openaip.net/data/openaip/{z}/{x}/{y}.pbf"
             ]
         }
     },
