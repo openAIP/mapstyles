@@ -17,11 +17,11 @@
         "openaip": {
             "type": "vector",
             "tiles": [
-                "https://staging.maps.openaip.net/data/openaip/{z}/{x}/{y}.pbf"
+                "https://maps.openaip.net/data/openaip/{z}/{x}/{y}.pbf"
             ]
         }
     },
-    "sprite":"https://staging.static.openaip.net/assets/dist/maps/styles/default/sprite",
+    "sprite": "https://www.openaip.net/dist/maps/styles/default/sprite",
     "glyphs": "mapbox://fonts/mapbox/{fontstack}/{range}.pbf",
     "layers": [
         {
@@ -11329,6 +11329,21 @@
             }
         },
         {
+            "id": "airspace_clicktarget",
+            "type": "fill",
+            "source": "openaip",
+            "source-layer": "airspace",
+            "minzoom": 7,
+            "maxzoom": 24,
+            "layout": {
+                "visibility": "visible"
+            },
+            "paint": {
+                "fill-opacity": 0,
+                "fill-color": "rgba(0, 0, 0, 0)"
+            }
+        },
+        {
             "id": "airspace_tsa_border",
             "type": "line",
             "source": "openaip",
@@ -13081,6 +13096,15 @@
             }
         },
         {
+            "id": "airport_clicktarget",
+            "type": "circle",
+            "source": "openaip",
+            "source-layer": "airport",
+            "minzoom": 0,
+            "maxzoom": 24,
+            "circle-opacity": 0
+        },
+        {
             "id": "airport_label",
             "type": "symbol",
             "source": "openaip",
@@ -13689,6 +13713,15 @@
             }
         },
         {
+            "id": "navaid_clicktarget",
+            "type": "circle",
+            "source": "openaip",
+            "source-layer": "navaid",
+            "minzoom": 0,
+            "maxzoom": 24,
+            "circle-opacity": 0
+        },
+        {
             "id": "navaid_ndb",
             "type": "symbol",
             "source": "openaip",
@@ -13895,6 +13928,15 @@
                     "property": "icon_rotation"
                 }
             }
+        },
+        {
+            "id": "hotspot_clicktarget",
+            "type": "circle",
+            "source": "openaip",
+            "source-layer": "hotspot",
+            "minzoom": 0,
+            "maxzoom": 24,
+            "circle-opacity": 0
         },
         {
             "id": "hotspot_times_late_evening",
