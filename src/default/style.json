@@ -17,11 +17,11 @@
         "openaip": {
             "type": "vector",
             "tiles": [
-                "https://staging.maps.openaip.net/data/openaip/{z}/{x}/{y}.pbf"
+                "https://maps.openaip.net/data/openaip/{z}/{x}/{y}.pbf"
             ]
         }
     },
-    "sprite": "https://staging.static.openaip.net/assets/dist/maps/styles/default/sprite",
+    "sprite": "https://www.openaip.net/dist/maps/styles/default/sprite",
     "glyphs": "mapbox://fonts/mapbox/{fontstack}/{range}.pbf",
     "layers": [
         {
@@ -13102,7 +13102,9 @@
             "source-layer": "airport",
             "minzoom": 0,
             "maxzoom": 24,
-            "circle-opacity": 0
+            "paint": {
+                "circle-opacity": 0
+            }
         },
         {
             "id": "airport_label",
@@ -13719,7 +13721,9 @@
             "source-layer": "navaid",
             "minzoom": 0,
             "maxzoom": 24,
-            "circle-opacity": 0
+            "paint": {
+                "circle-opacity": 0
+            }
         },
         {
             "id": "navaid_ndb",
@@ -13936,7 +13940,9 @@
             "source-layer": "hotspot",
             "minzoom": 0,
             "maxzoom": 24,
-            "circle-opacity": 0
+            "paint": {
+                "circle-opacity": 0
+            }
         },
         {
             "id": "hotspot_times_late_evening",
