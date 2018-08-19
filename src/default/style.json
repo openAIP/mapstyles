@@ -17,11 +17,11 @@
         "openaip": {
             "type": "vector",
             "tiles": [
-                "https://maps.openaip.net/data/openaip/{z}/{x}/{y}.pbf"
+                "https://staging.maps.openaip.net/data/openaip/{z}/{x}/{y}.pbf"
             ]
         }
     },
-    "sprite": "https://www.openaip.net/dist/maps/styles/default/sprite",
+    "sprite": "https://staging.openaip.net/dist/maps/styles/default/sprite",
     "glyphs": "mapbox://fonts/mapbox/{fontstack}/{range}.pbf",
     "layers": [
         {
