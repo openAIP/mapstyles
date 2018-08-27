@@ -13413,6 +13413,248 @@
             }
         },
         {
+            "id": "navaid_clicktarget",
+            "type": "circle",
+            "metadata": {
+                "maputnik:comment": "Click-target style for external javascripts."
+            },
+            "source": "openaip",
+            "source-layer": "navaid",
+            "minzoom": 6,
+            "maxzoom": 24,
+            "layout": {
+                "visibility": "visible"
+            },
+            "paint": {
+                "circle-opacity": 0
+            }
+        },
+        {
+            "id": "navaid_other",
+            "type": "symbol",
+            "source": "openaip",
+            "source-layer": "navaid",
+            "minzoom": 6,
+            "filter": [
+                "all",
+                [
+                    "!in",
+                    "type_label",
+                    "ndb"
+                ]
+            ],
+            "layout": {
+                "icon-image": {
+                    "stops": [
+                        [
+                            6,
+                            "navaid_{type_label}-small"
+                        ],
+                        [
+                            8,
+                            "navaid_{type_label}-medium"
+                        ]
+                    ]
+                },
+                "icon-allow-overlap": true,
+                "visibility": "visible",
+                "text-field": {
+                    "stops": [
+                        [
+                            6,
+                            "{identifier}"
+                        ],
+                        [
+                            9,
+                            "{label}"
+                        ]
+                    ]
+                },
+                "text-allow-overlap": true,
+                "text-offset": {
+                    "stops": [
+                        [
+                            6,
+                            [
+                                0,
+                                1.2
+                            ]
+                        ],
+                        [
+                            8,
+                            [
+                                0,
+                                1.8
+                            ]
+                        ],
+                        [
+                            10,
+                            [
+                                0,
+                                2.5
+                            ]
+                        ]
+                    ]
+                },
+                "text-size": 12,
+                "text-font": [
+                    "DIN Offc Pro Regular",
+                    "Arial Unicode MS Regular"
+                ],
+                "icon-ignore-placement": false,
+                "text-ignore-placement": true
+            },
+            "paint": {
+                "text-halo-width": 2,
+                "text-color": "rgba(0, 0, 0, 1)",
+                "text-halo-blur": 1,
+                "text-halo-color": "rgba(255, 255, 255, 1)"
+            }
+        },
+        {
+            "id": "navaid_ndb",
+            "type": "symbol",
+            "source": "openaip",
+            "source-layer": "navaid",
+            "minzoom": 6,
+            "filter": [
+                "all",
+                [
+                    "==",
+                    "type_label",
+                    "ndb"
+                ]
+            ],
+            "layout": {
+                "icon-image": {
+                    "stops": [
+                        [
+                            6,
+                            "navaid_{type_label}-small"
+                        ],
+                        [
+                            10,
+                            "navaid_{type_label}-medium"
+                        ]
+                    ]
+                },
+                "text-field": {
+                    "stops": [
+                        [
+                            6,
+                            "{identifier}"
+                        ],
+                        [
+                            9,
+                            "{label}"
+                        ]
+                    ]
+                },
+                "symbol-placement": "point",
+                "text-size": 12,
+                "text-font": [
+                    "DIN Offc Pro Regular",
+                    "Arial Unicode MS Regular"
+                ],
+                "text-justify": "left",
+                "visibility": "visible",
+                "text-allow-overlap": true,
+                "text-ignore-placement": true,
+                "icon-allow-overlap": true,
+                "icon-ignore-placement": false,
+                "icon-optional": false
+            },
+            "paint": {
+                "icon-opacity": {
+                    "stops": [
+                        [
+                            6,
+                            0.5
+                        ],
+                        [
+                            10,
+                            1
+                        ]
+                    ]
+                },
+                "text-halo-color": "rgba(255, 255, 255, 1)",
+                "text-halo-width": 1,
+                "text-translate-anchor": "map",
+                "text-translate": {
+                    "stops": [
+                        [
+                            6,
+                            [
+                                0,
+                                -20
+                            ]
+                        ],
+                        [
+                            9,
+                            [
+                                0,
+                                -25
+                            ]
+                        ],
+                        [
+                            10,
+                            [
+                                0,
+                                -35
+                            ]
+                        ]
+                    ]
+                },
+                "icon-halo-color": "rgba(255, 255, 255, 1)",
+                "icon-halo-width": 2,
+                "icon-halo-blur": 1
+            }
+        },
+        {
+            "id": "navaid_beam_rose",
+            "type": "symbol",
+            "source": "openaip",
+            "source-layer": "navaid",
+            "minzoom": 8,
+            "filter": [
+                "all",
+                [
+                    "!in",
+                    "type_label",
+                    "dme",
+                    "tacan",
+                    "ndb"
+                ]
+            ],
+            "layout": {
+                "icon-image": "navaid_rose-medium",
+                "icon-allow-overlap": true,
+                "icon-rotate": {
+                    "type": "identity",
+                    "property": "icon_rotation"
+                },
+                "visibility": "visible",
+                "text-allow-overlap": true,
+                "text-ignore-placement": true,
+                "icon-ignore-placement": true,
+                "icon-optional": false
+            },
+            "paint": {
+                "icon-opacity": {
+                    "stops": [
+                        [
+                            8,
+                            0
+                        ],
+                        [
+                            9,
+                            1
+                        ]
+                    ]
+                }
+            }
+        },
+        {
             "id": "airport_clicktarget",
             "type": "circle",
             "metadata": {
@@ -14468,248 +14710,6 @@
                 },
                 "icon-allow-overlap": false,
                 "visibility": "visible"
-            }
-        },
-        {
-            "id": "navaid_clicktarget",
-            "type": "circle",
-            "metadata": {
-                "maputnik:comment": "Click-target style for external javascripts."
-            },
-            "source": "openaip",
-            "source-layer": "navaid",
-            "minzoom": 6,
-            "maxzoom": 24,
-            "layout": {
-                "visibility": "visible"
-            },
-            "paint": {
-                "circle-opacity": 0
-            }
-        },
-        {
-            "id": "navaid_other",
-            "type": "symbol",
-            "source": "openaip",
-            "source-layer": "navaid",
-            "minzoom": 6,
-            "filter": [
-                "all",
-                [
-                    "!in",
-                    "type_label",
-                    "ndb"
-                ]
-            ],
-            "layout": {
-                "icon-image": {
-                    "stops": [
-                        [
-                            6,
-                            "navaid_{type_label}-small"
-                        ],
-                        [
-                            8,
-                            "navaid_{type_label}-medium"
-                        ]
-                    ]
-                },
-                "icon-allow-overlap": true,
-                "visibility": "visible",
-                "text-field": {
-                    "stops": [
-                        [
-                            6,
-                            "{identifier}"
-                        ],
-                        [
-                            9,
-                            "{label}"
-                        ]
-                    ]
-                },
-                "text-allow-overlap": true,
-                "text-offset": {
-                    "stops": [
-                        [
-                            6,
-                            [
-                                0,
-                                1.2
-                            ]
-                        ],
-                        [
-                            8,
-                            [
-                                0,
-                                1.8
-                            ]
-                        ],
-                        [
-                            10,
-                            [
-                                0,
-                                2.5
-                            ]
-                        ]
-                    ]
-                },
-                "text-size": 12,
-                "text-font": [
-                    "DIN Offc Pro Regular",
-                    "Arial Unicode MS Regular"
-                ],
-                "icon-ignore-placement": false,
-                "text-ignore-placement": true
-            },
-            "paint": {
-                "text-halo-width": 2,
-                "text-color": "rgba(0, 0, 0, 1)",
-                "text-halo-blur": 1,
-                "text-halo-color": "rgba(255, 255, 255, 1)"
-            }
-        },
-        {
-            "id": "navaid_ndb",
-            "type": "symbol",
-            "source": "openaip",
-            "source-layer": "navaid",
-            "minzoom": 6,
-            "filter": [
-                "all",
-                [
-                    "==",
-                    "type_label",
-                    "ndb"
-                ]
-            ],
-            "layout": {
-                "icon-image": {
-                    "stops": [
-                        [
-                            6,
-                            "navaid_{type_label}-small"
-                        ],
-                        [
-                            10,
-                            "navaid_{type_label}-medium"
-                        ]
-                    ]
-                },
-                "text-field": {
-                    "stops": [
-                        [
-                            6,
-                            "{identifier}"
-                        ],
-                        [
-                            9,
-                            "{label}"
-                        ]
-                    ]
-                },
-                "symbol-placement": "point",
-                "text-size": 12,
-                "text-font": [
-                    "DIN Offc Pro Regular",
-                    "Arial Unicode MS Regular"
-                ],
-                "text-justify": "left",
-                "visibility": "visible",
-                "text-allow-overlap": true,
-                "text-ignore-placement": true,
-                "icon-allow-overlap": true,
-                "icon-ignore-placement": false,
-                "icon-optional": false
-            },
-            "paint": {
-                "icon-opacity": {
-                    "stops": [
-                        [
-                            6,
-                            0.5
-                        ],
-                        [
-                            10,
-                            1
-                        ]
-                    ]
-                },
-                "text-halo-color": "rgba(255, 255, 255, 1)",
-                "text-halo-width": 1,
-                "text-translate-anchor": "map",
-                "text-translate": {
-                    "stops": [
-                        [
-                            6,
-                            [
-                                0,
-                                -20
-                            ]
-                        ],
-                        [
-                            9,
-                            [
-                                0,
-                                -25
-                            ]
-                        ],
-                        [
-                            10,
-                            [
-                                0,
-                                -35
-                            ]
-                        ]
-                    ]
-                },
-                "icon-halo-color": "rgba(255, 255, 255, 1)",
-                "icon-halo-width": 2,
-                "icon-halo-blur": 1
-            }
-        },
-        {
-            "id": "navaid_beam_rose",
-            "type": "symbol",
-            "source": "openaip",
-            "source-layer": "navaid",
-            "minzoom": 8,
-            "filter": [
-                "all",
-                [
-                    "!in",
-                    "type_label",
-                    "dme",
-                    "tacan",
-                    "ndb"
-                ]
-            ],
-            "layout": {
-                "icon-image": "navaid_rose-medium",
-                "icon-allow-overlap": true,
-                "icon-rotate": {
-                    "type": "identity",
-                    "property": "icon_rotation"
-                },
-                "visibility": "visible",
-                "text-allow-overlap": true,
-                "text-ignore-placement": true,
-                "icon-ignore-placement": true,
-                "icon-optional": false
-            },
-            "paint": {
-                "icon-opacity": {
-                    "stops": [
-                        [
-                            8,
-                            0
-                        ],
-                        [
-                            9,
-                            1
-                        ]
-                    ]
-                }
             }
         }
     ],
