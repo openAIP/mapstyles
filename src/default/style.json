@@ -17,11 +17,11 @@
         "openaip": {
             "type": "vector",
             "tiles": [
-                "https://staging.maps.openaip.net/data/openaip/{z}/{x}/{y}.pbf"
+                "https://maps.openaip.net/data/openaip/{z}/{x}/{y}.pbf"
             ]
         }
     },
-    "sprite": "https://staging.static.openaip.net/assets/dist/maps/styles/default/sprite",
+    "sprite": "https://www.openaip.net/dist/maps/styles/default/sprite",
     "glyphs": "mapbox://fonts/mapbox/{fontstack}/{range}.pbf",
     "layers": [
         {
@@ -11329,6 +11329,426 @@
             }
         },
         {
+            "id": "hotspot_clicktarget",
+            "type": "circle",
+            "metadata": {
+                "maputnik:comment": "Click-target style for external javascripts."
+            },
+            "source": "openaip",
+            "source-layer": "hotspot",
+            "minzoom": 0,
+            "maxzoom": 24,
+            "paint": {
+                "circle-opacity": 0
+            }
+        },
+        {
+            "id": "hotspot_times_late_evening",
+            "type": "symbol",
+            "source": "openaip",
+            "source-layer": "hotspot",
+            "minzoom": 13,
+            "filter": [
+                "any",
+                [
+                    "in",
+                    "time_of_day_late_evening",
+                    "normal",
+                    "favorite"
+                ]
+            ],
+            "layout": {
+                "icon-image": "hotspot_times_late_evening_{time_of_day_late_evening}-large",
+                "visibility": "visible",
+                "symbol-placement": "point",
+                "icon-allow-overlap": true,
+                "icon-rotation-alignment": "map"
+            },
+            "paint": {
+                "icon-opacity": 1,
+                "text-halo-color": "rgba(255, 255, 255, 1)",
+                "text-halo-width": 1,
+                "icon-translate-anchor": "map"
+            }
+        },
+        {
+            "id": "hotspot_times_evening",
+            "type": "symbol",
+            "source": "openaip",
+            "source-layer": "hotspot",
+            "minzoom": 13,
+            "filter": [
+                "any",
+                [
+                    "in",
+                    "time_of_day_evening",
+                    "normal",
+                    "favorite"
+                ]
+            ],
+            "layout": {
+                "icon-image": "hotspot_times_evening_{time_of_day_evening}-large",
+                "visibility": "visible",
+                "symbol-placement": "point",
+                "icon-allow-overlap": true,
+                "icon-rotation-alignment": "map"
+            },
+            "paint": {
+                "icon-opacity": 1,
+                "text-halo-color": "rgba(255, 255, 255, 1)",
+                "text-halo-width": 1,
+                "icon-translate-anchor": "map"
+            }
+        },
+        {
+            "id": "hotspot_times_day-copy",
+            "type": "symbol",
+            "source": "openaip",
+            "source-layer": "hotspot",
+            "minzoom": 13,
+            "filter": [
+                "any",
+                [
+                    "in",
+                    "time_of_day_day",
+                    "normal",
+                    "favorite"
+                ]
+            ],
+            "layout": {
+                "icon-image": "hotspot_times_day_{time_of_day_day}-large",
+                "visibility": "visible",
+                "symbol-placement": "point",
+                "icon-allow-overlap": true,
+                "icon-rotation-alignment": "map"
+            },
+            "paint": {
+                "icon-opacity": 1,
+                "text-halo-color": "rgba(255, 255, 255, 1)",
+                "text-halo-width": 1,
+                "icon-translate-anchor": "map"
+            }
+        },
+        {
+            "id": "hotspot_times_noon",
+            "type": "symbol",
+            "source": "openaip",
+            "source-layer": "hotspot",
+            "minzoom": 13,
+            "filter": [
+                "any",
+                [
+                    "in",
+                    "time_of_day_noon",
+                    "normal",
+                    "favorite"
+                ]
+            ],
+            "layout": {
+                "icon-image": "hotspot_times_noon_{time_of_day_noon}-large",
+                "visibility": "visible",
+                "symbol-placement": "point",
+                "icon-allow-overlap": true,
+                "icon-rotation-alignment": "map"
+            },
+            "paint": {
+                "icon-opacity": 1,
+                "text-halo-color": "rgba(255, 255, 255, 1)",
+                "text-halo-width": 1,
+                "icon-translate-anchor": "map"
+            }
+        },
+        {
+            "id": "hotspot_times_morning",
+            "type": "symbol",
+            "source": "openaip",
+            "source-layer": "hotspot",
+            "minzoom": 13,
+            "filter": [
+                "any",
+                [
+                    "in",
+                    "time_of_day_morning",
+                    "normal",
+                    "favorite"
+                ]
+            ],
+            "layout": {
+                "icon-image": "hotspot_times_morning_{time_of_day_morning}-large",
+                "visibility": "visible",
+                "symbol-placement": "point",
+                "icon-allow-overlap": true,
+                "icon-rotation-alignment": "map"
+            },
+            "paint": {
+                "icon-opacity": 1,
+                "text-halo-color": "rgba(255, 255, 255, 1)",
+                "text-halo-width": 1,
+                "icon-translate-anchor": "map"
+            }
+        },
+        {
+            "id": "hotspot_wind_315",
+            "type": "symbol",
+            "source": "openaip",
+            "source-layer": "hotspot",
+            "layout": {
+                "icon-image": "hotspot_wind_{wind_direction_315}",
+                "icon-rotate": 315,
+                "icon-offset": [
+                    0,
+                    -35
+                ],
+                "icon-allow-overlap": true
+            }
+        },
+        {
+            "id": "hotspot_wind_270",
+            "type": "symbol",
+            "source": "openaip",
+            "source-layer": "hotspot",
+            "layout": {
+                "icon-image": "hotspot_wind_{wind_direction_270}",
+                "icon-rotate": 270,
+                "icon-offset": [
+                    0,
+                    -35
+                ],
+                "icon-allow-overlap": true
+            }
+        },
+        {
+            "id": "hotspot_wind_225",
+            "type": "symbol",
+            "source": "openaip",
+            "source-layer": "hotspot",
+            "layout": {
+                "icon-image": "hotspot_wind_{wind_direction_225}",
+                "icon-rotate": 225,
+                "icon-offset": [
+                    0,
+                    -35
+                ],
+                "icon-allow-overlap": true
+            }
+        },
+        {
+            "id": "hotspot_wind_180",
+            "type": "symbol",
+            "source": "openaip",
+            "source-layer": "hotspot",
+            "layout": {
+                "icon-image": "hotspot_wind_{wind_direction_180}",
+                "icon-rotate": 180,
+                "icon-offset": [
+                    0,
+                    -35
+                ],
+                "icon-allow-overlap": true
+            }
+        },
+        {
+            "id": "hotspot_wind_135",
+            "type": "symbol",
+            "source": "openaip",
+            "source-layer": "hotspot",
+            "layout": {
+                "icon-image": "hotspot_wind_{wind_direction_135}",
+                "icon-rotate": 135,
+                "icon-offset": [
+                    0,
+                    -35
+                ],
+                "icon-allow-overlap": true
+            }
+        },
+        {
+            "id": "hotspot_wind_90",
+            "type": "symbol",
+            "source": "openaip",
+            "source-layer": "hotspot",
+            "layout": {
+                "icon-image": "hotspot_wind_{wind_direction_90}",
+                "icon-rotate": 90,
+                "icon-offset": [
+                    0,
+                    -35
+                ],
+                "icon-allow-overlap": true
+            }
+        },
+        {
+            "id": "hotspot_wind_45",
+            "type": "symbol",
+            "source": "openaip",
+            "source-layer": "hotspot",
+            "layout": {
+                "icon-image": "hotspot_wind_{wind_direction_45}",
+                "icon-rotate": 45,
+                "icon-offset": [
+                    0,
+                    -35
+                ],
+                "icon-allow-overlap": true
+            }
+        },
+        {
+            "id": "hotspot_wind_0",
+            "type": "symbol",
+            "source": "openaip",
+            "source-layer": "hotspot",
+            "layout": {
+                "icon-image": "hotspot_wind_{wind_direction_0}",
+                "icon-rotate": 0,
+                "icon-offset": [
+                    0,
+                    -35
+                ],
+                "icon-allow-overlap": true
+            }
+        },
+        {
+            "id": "hotspot_cloud",
+            "type": "symbol",
+            "source": "openaip",
+            "source-layer": "hotspot",
+            "minzoom": 8,
+            "layout": {
+                "icon-image": {
+                    "stops": [
+                        [
+                            8,
+                            "hotspot_{reliability_label}-small"
+                        ],
+                        [
+                            11,
+                            "hotspot_{reliability_label}-medium"
+                        ],
+                        [
+                            13,
+                            "hotspot_{reliability_label}-large"
+                        ]
+                    ]
+                },
+                "text-field": {
+                    "stops": [
+                        [
+                            10,
+                            "{label_short}"
+                        ],
+                        [
+                            13,
+                            "{label_full}"
+                        ]
+                    ]
+                },
+                "text-offset": {
+                    "stops": [
+                        [
+                            10,
+                            [
+                                0,
+                                -2.2
+                            ]
+                        ],
+                        [
+                            12,
+                            [
+                                0,
+                                -3
+                            ]
+                        ],
+                        [
+                            13,
+                            [
+                                0,
+                                -6
+                            ]
+                        ]
+                    ]
+                },
+                "text-size": {
+                    "stops": [
+                        [
+                            9,
+                            11
+                        ],
+                        [
+                            10,
+                            12
+                        ]
+                    ]
+                },
+                "visibility": "visible",
+                "symbol-placement": "point",
+                "text-allow-overlap": true,
+                "icon-allow-overlap": true
+            },
+            "paint": {
+                "icon-opacity": {
+                    "stops": [
+                        [
+                            8,
+                            0.1
+                        ],
+                        [
+                            9,
+                            0.5
+                        ],
+                        [
+                            13,
+                            1
+                        ]
+                    ]
+                },
+                "text-halo-color": "rgba(255, 255, 255, 1)",
+                "text-halo-width": 1,
+                "text-opacity": {
+                    "stops": [
+                        [
+                            8,
+                            0
+                        ],
+                        [
+                            9,
+                            0
+                        ],
+                        [
+                            10,
+                            1
+                        ],
+                        [
+                            14,
+                            1
+                        ]
+                    ]
+                }
+            }
+        },
+        {
+            "id": "hotspot_industrial",
+            "type": "symbol",
+            "source": "openaip",
+            "source-layer": "hotspot",
+            "minzoom": 13,
+            "filter": [
+                "all",
+                [
+                    "==",
+                    "type_label",
+                    "artificial"
+                ]
+            ],
+            "layout": {
+                "icon-allow-overlap": true,
+                "icon-image": "hotspot_industrial",
+                "icon-offset": [
+                    0,
+                    55
+                ]
+            }
+        },
+        {
             "id": "airspace_clicktarget",
             "type": "fill",
             "source": "openaip",
@@ -12993,6 +13413,23 @@
             }
         },
         {
+            "id": "airport_clicktarget",
+            "type": "circle",
+            "metadata": {
+                "maputnik:comment": "Click-target style for external javascripts."
+            },
+            "source": "openaip",
+            "source-layer": "airport",
+            "minzoom": 3,
+            "maxzoom": 24,
+            "layout": {
+                "visibility": "visible"
+            },
+            "paint": {
+                "circle-opacity": 0
+            }
+        },
+        {
             "id": "airport_traffic_circuit",
             "type": "line",
             "source": "openaip",
@@ -13001,7 +13438,8 @@
             "layout": {
                 "line-cap": "round",
                 "line-join": "round",
-                "line-miter-limit": 2
+                "line-miter-limit": 2,
+                "visibility": "visible"
             },
             "paint": {
                 "line-translate-anchor": "map",
@@ -13025,164 +13463,14 @@
             }
         },
         {
-            "id": "airport_traffic_circuit_label",
-            "type": "symbol",
-            "source": "openaip",
-            "source-layer": "airport_traffic_circuit",
-            "minzoom": 11,
-            "filter": [
-                "all"
-            ],
-            "layout": {
-                "icon-image": {
-                    "stops": [
-                        [
-                            11,
-                            "traffic_circuit_{type_label}-small"
-                        ],
-                        [
-                            15,
-                            "traffic_circuit_{type_label}-medium"
-                        ]
-                    ]
-                },
-                "symbol-placement": "line",
-                "icon-allow-overlap": false,
-                "icon-ignore-placement": false,
-                "icon-optional": false,
-                "icon-keep-upright": false,
-                "icon-rotation-alignment": "viewport",
-                "icon-padding": 2,
-                "symbol-spacing": {
-                    "stops": [
-                        [
-                            11,
-                            300
-                        ],
-                        [
-                            12,
-                            300
-                        ],
-                        [
-                            15,
-                            1000
-                        ],
-                        [
-                            18,
-                            800
-                        ]
-                    ]
-                },
-                "symbol-avoid-edges": false,
-                "icon-offset": [
-                    0,
-                    -2
-                ],
-                "text-allow-overlap": false
-            },
-            "paint": {
-                "icon-opacity": {
-                    "stops": [
-                        [
-                            11,
-                            0.3
-                        ],
-                        [
-                            16,
-                            0.8
-                        ]
-                    ]
-                }
-            }
-        },
-        {
-            "id": "airport_clicktarget",
-            "type": "circle",
-            "source": "openaip",
-            "source-layer": "airport",
-            "minzoom": 0,
-            "maxzoom": 24,
-            "paint": {
-                "circle-opacity": 0
-            }
-        },
-        {
-            "id": "airport_label",
-            "type": "symbol",
-            "source": "openaip",
-            "source-layer": "airport",
-            "minzoom": 7,
-            "maxzoom": 24,
-            "filter": [
-                "all",
-                [
-                    "!=",
-                    "type_label",
-                    "intl_apt"
-                ]
-            ],
-            "layout": {
-                "text-allow-overlap": false,
-                "text-ignore-placement": false,
-                "text-field": {
-                    "stops": [
-                        [
-                            7,
-                            "{icao_code}"
-                        ],
-                        [
-                            8,
-                            "{label_short}"
-                        ],
-                        [
-                            10,
-                            "{label_full}"
-                        ]
-                    ]
-                },
-                "text-justify": "left",
-                "text-anchor": "center",
-                "text-offset": {
-                    "stops": [
-                        [
-                            7,
-                            [
-                                0,
-                                -1.9
-                            ]
-                        ],
-                        [
-                            8,
-                            [
-                                0,
-                                -2.1
-                            ]
-                        ],
-                        [
-                            10,
-                            [
-                                0,
-                                -4
-                            ]
-                        ]
-                    ]
-                },
-                "text-size": 12,
-                "visibility": "visible",
-                "symbol-placement": "point"
-            },
-            "paint": {
-                "text-halo-color": "rgba(255, 255, 255, 1)",
-                "text-halo-width": 1,
-                "text-halo-blur": 0
-            }
-        },
-        {
             "id": "airport_runway",
             "type": "symbol",
+            "metadata": {
+                "maputnik:comment": "Runway type for all airfield types that either have no runway or are not international nor have an icao code."
+            },
             "source": "openaip",
             "source-layer": "airport",
-            "minzoom": 7,
+            "minzoom": 10,
             "maxzoom": 24,
             "filter": [
                 "all",
@@ -13198,23 +13486,24 @@
                     "ad_closed",
                     "af_water",
                     "heli_civil",
-                    "heli_mil"
+                    "heli_mil",
+                    "intl_apt"
+                ],
+                [
+                    "!has",
+                    "icao_code"
                 ]
             ],
             "layout": {
                 "icon-image": {
                     "stops": [
                         [
-                            7,
+                            10,
                             "runway_{runway_surface}-small"
                         ],
                         [
-                            10,
+                            12,
                             "runway_{runway_surface}-medium"
-                        ],
-                        [
-                            17,
-                            "runway_{runway_surface}-large"
                         ]
                     ]
                 },
@@ -13225,14 +13514,20 @@
                 },
                 "visibility": "visible",
                 "icon-padding": 0
+            },
+            "paint": {
+                "icon-opacity": 1
             }
         },
         {
             "id": "airport_parachute",
             "type": "symbol",
+            "metadata": {
+                "maputnik:comment": "A parachute symbol next to an airfield if there is skydive activity."
+            },
             "source": "openaip",
             "source-layer": "airport",
-            "minzoom": 7,
+            "minzoom": 8,
             "maxzoom": 24,
             "filter": [
                 "all",
@@ -13246,7 +13541,7 @@
                 "icon-image": {
                     "stops": [
                         [
-                            7,
+                            8,
                             "parachute-small"
                         ],
                         [
@@ -13261,7 +13556,7 @@
                 "icon-offset": {
                     "stops": [
                         [
-                            7,
+                            8,
                             [
                                 -20,
                                 15
@@ -13290,7 +13585,7 @@
             "type": "symbol",
             "source": "openaip",
             "source-layer": "airport",
-            "minzoom": 7,
+            "minzoom": 8,
             "maxzoom": 24,
             "filter": [
                 "all",
@@ -13309,30 +13604,94 @@
                 "icon-image": {
                     "stops": [
                         [
-                            7,
-                            "gliding-small"
-                        ],
-                        [
                             10,
-                            "gliding-medium"
+                            "{type_label}-small"
                         ],
                         [
-                            17,
-                            "gliding-large"
+                            12,
+                            "{type_label}-medium"
                         ]
                     ]
                 },
                 "icon-size": 1,
+                "text-allow-overlap": true,
+                "text-ignore-placement": true,
                 "icon-allow-overlap": true,
-                "visibility": "visible",
                 "symbol-avoid-edges": false,
-                "symbol-placement": "point"
+                "symbol-placement": "point",
+                "visibility": "visible",
+                "text-field": {
+                    "stops": [
+                        [
+                            8,
+                            "{label_short}"
+                        ],
+                        [
+                            10,
+                            "{label_full}"
+                        ]
+                    ]
+                },
+                "text-size": {
+                    "stops": [
+                        [
+                            8,
+                            9
+                        ],
+                        [
+                            12,
+                            12
+                        ]
+                    ]
+                },
+                "text-offset": {
+                    "stops": [
+                        [
+                            9,
+                            [
+                                0,
+                                -2.5
+                            ]
+                        ],
+                        [
+                            10,
+                            [
+                                0,
+                                -4
+                            ]
+                        ]
+                    ]
+                }
             },
             "paint": {
                 "icon-color": "rgba(191, 45, 45, 1)",
                 "text-halo-color": "rgba(255, 255, 255, 1)",
                 "text-halo-width": 1,
-                "text-halo-blur": 0
+                "text-halo-blur": 0,
+                "icon-opacity": {
+                    "stops": [
+                        [
+                            8,
+                            0
+                        ],
+                        [
+                            10,
+                            1
+                        ]
+                    ]
+                },
+                "text-opacity": {
+                    "stops": [
+                        [
+                            8,
+                            0
+                        ],
+                        [
+                            10,
+                            1
+                        ]
+                    ]
+                }
             }
         },
         {
@@ -13340,7 +13699,7 @@
             "type": "symbol",
             "source": "openaip",
             "source-layer": "airport",
-            "minzoom": 7,
+            "minzoom": 8,
             "maxzoom": 24,
             "filter": [
                 "all",
@@ -13359,16 +13718,12 @@
                 "icon-image": {
                     "stops": [
                         [
-                            7,
+                            10,
                             "gliding_winch-small"
                         ],
                         [
-                            10,
+                            12,
                             "gliding_winch-medium"
-                        ],
-                        [
-                            17,
-                            "gliding_winch-large"
                         ]
                     ]
                 },
@@ -13376,196 +13731,14 @@
                 "icon-allow-overlap": true,
                 "visibility": "visible",
                 "symbol-avoid-edges": false,
-                "symbol-placement": "point"
-            },
-            "paint": {
-                "icon-color": "rgba(191, 45, 45, 1)",
-                "text-halo-color": "rgba(255, 255, 255, 1)",
-                "text-halo-width": 1,
-                "text-halo-blur": 0
-            }
-        },
-        {
-            "id": "airport_other_circle",
-            "type": "circle",
-            "source": "openaip",
-            "source-layer": "airport",
-            "minzoom": 0,
-            "maxzoom": 7,
-            "filter": [
-                "all",
-                [
-                    "!=",
-                    "type_label",
-                    "intl_apt"
-                ]
-            ],
-            "layout": {},
-            "paint": {
-                "circle-radius": {
-                    "stops": [
-                        [
-                            4,
-                            0.8
-                        ],
-                        [
-                            7,
-                            1.5
-                        ]
-                    ]
-                }
-            }
-        },
-        {
-            "id": "airport_other",
-            "type": "symbol",
-            "source": "openaip",
-            "source-layer": "airport",
-            "minzoom": 7,
-            "maxzoom": 24,
-            "filter": [
-                "all",
-                [
-                    "!in",
-                    "type_label",
-                    "intl_apt",
-                    "gliding"
-                ]
-            ],
-            "layout": {
-                "icon-image": {
-                    "stops": [
-                        [
-                            7,
-                            "{type_label}-small"
-                        ],
-                        [
-                            10,
-                            "{type_label}-medium"
-                        ],
-                        [
-                            17,
-                            "{type_label}-large"
-                        ]
-                    ]
-                },
-                "icon-size": 1,
-                "text-allow-overlap": false,
-                "text-ignore-placement": false,
-                "icon-allow-overlap": true,
-                "symbol-avoid-edges": false,
-                "symbol-placement": "point"
-            },
-            "paint": {
-                "icon-color": "rgba(191, 45, 45, 1)",
-                "text-halo-color": "rgba(255, 255, 255, 1)",
-                "text-halo-width": 1,
-                "text-halo-blur": 0
-            }
-        },
-        {
-            "id": "airport_intl_circle",
-            "type": "circle",
-            "source": "openaip",
-            "source-layer": "airport",
-            "minzoom": 0,
-            "maxzoom": 6,
-            "filter": [
-                "all",
-                [
-                    "==",
-                    "type_label",
-                    "intl_apt"
-                ]
-            ],
-            "layout": {},
-            "paint": {
-                "circle-radius": {
-                    "stops": [
-                        [
-                            4,
-                            1.5
-                        ],
-                        [
-                            6,
-                            2
-                        ]
-                    ]
-                }
-            }
-        },
-        {
-            "id": "airport_intl",
-            "type": "symbol",
-            "source": "openaip",
-            "source-layer": "airport",
-            "minzoom": 6,
-            "maxzoom": 24,
-            "filter": [
-                "all",
-                [
-                    "==",
-                    "type_label",
-                    "intl_apt"
-                ]
-            ],
-            "layout": {
-                "icon-image": {
-                    "stops": [
-                        [
-                            6,
-                            "apt-tiny"
-                        ],
-                        [
-                            7,
-                            "apt-small"
-                        ],
-                        [
-                            10,
-                            "apt-medium"
-                        ],
-                        [
-                            17,
-                            "apt-large"
-                        ]
-                    ]
-                },
-                "icon-size": 1,
-                "text-allow-overlap": true,
-                "text-ignore-placement": false,
-                "icon-allow-overlap": true,
-                "text-field": {
-                    "stops": [
-                        [
-                            6,
-                            "{icao_code}"
-                        ],
-                        [
-                            8,
-                            "{label_short}"
-                        ],
-                        [
-                            10,
-                            "{label_full}"
-                        ]
-                    ]
-                },
-                "text-justify": "left",
-                "text-anchor": "center",
+                "symbol-placement": "point",
                 "text-offset": {
                     "stops": [
                         [
-                            6,
+                            9,
                             [
                                 0,
-                                -1.7
-                            ]
-                        ],
-                        [
-                            8,
-                            [
-                                0,
-                                -2
+                                -2.5
                             ]
                         ],
                         [
@@ -13577,19 +13750,597 @@
                         ]
                     ]
                 },
-                "text-size": 12,
-                "visibility": "visible",
-                "text-font": [
-                    "DIN Offc Pro Bold",
-                    "Arial Unicode MS Bold"
+                "text-size": {
+                    "stops": [
+                        [
+                            8,
+                            9
+                        ],
+                        [
+                            12,
+                            12
+                        ]
+                    ]
+                },
+                "text-field": {
+                    "stops": [
+                        [
+                            8,
+                            "{label_short}"
+                        ],
+                        [
+                            10,
+                            "{label_full}"
+                        ]
+                    ]
+                },
+                "text-allow-overlap": true,
+                "text-ignore-placement": true
+            },
+            "paint": {
+                "icon-color": "rgba(191, 45, 45, 1)",
+                "text-halo-color": "rgba(255, 255, 255, 1)",
+                "text-halo-width": 1,
+                "text-halo-blur": 0,
+                "icon-opacity": {
+                    "stops": [
+                        [
+                            8,
+                            0
+                        ],
+                        [
+                            10,
+                            1
+                        ]
+                    ]
+                },
+                "text-opacity": {
+                    "stops": [
+                        [
+                            8,
+                            0
+                        ],
+                        [
+                            10,
+                            1
+                        ]
+                    ]
+                }
+            }
+        },
+        {
+            "id": "airport_other",
+            "type": "symbol",
+            "metadata": {
+                "maputnik:comment": "General airport style, excludes  international airports, airport with ICAO code and glider fields."
+            },
+            "source": "openaip",
+            "source-layer": "airport",
+            "minzoom": 8,
+            "maxzoom": 24,
+            "filter": [
+                "all",
+                [
+                    "!in",
+                    "type_label",
+                    "intl_apt",
+                    "gliding"
                 ],
-                "text-transform": "none"
+                [
+                    "!has",
+                    "icao_code"
+                ]
+            ],
+            "layout": {
+                "icon-image": {
+                    "stops": [
+                        [
+                            10,
+                            "{type_label}-small"
+                        ],
+                        [
+                            17,
+                            "{type_label}-medium"
+                        ]
+                    ]
+                },
+                "icon-size": 1,
+                "text-allow-overlap": false,
+                "text-ignore-placement": false,
+                "icon-allow-overlap": true,
+                "symbol-avoid-edges": false,
+                "symbol-placement": "point",
+                "visibility": "visible",
+                "text-field": {
+                    "stops": [
+                        [
+                            8,
+                            "{label_short}"
+                        ],
+                        [
+                            10,
+                            "{label_full}"
+                        ]
+                    ]
+                },
+                "text-size": {
+                    "stops": [
+                        [
+                            8,
+                            9
+                        ],
+                        [
+                            12,
+                            12
+                        ]
+                    ]
+                },
+                "text-offset": {
+                    "stops": [
+                        [
+                            9,
+                            [
+                                0,
+                                -2.5
+                            ]
+                        ],
+                        [
+                            10,
+                            [
+                                0,
+                                -4
+                            ]
+                        ]
+                    ]
+                },
+                "icon-ignore-placement": false
+            },
+            "paint": {
+                "icon-color": "rgba(191, 45, 45, 1)",
+                "text-halo-color": "rgba(255, 255, 255, 1)",
+                "text-halo-width": 1,
+                "text-halo-blur": 0,
+                "icon-opacity": {
+                    "stops": [
+                        [
+                            8,
+                            0
+                        ],
+                        [
+                            10,
+                            1
+                        ]
+                    ]
+                },
+                "text-opacity": {
+                    "stops": [
+                        [
+                            8,
+                            0
+                        ],
+                        [
+                            10,
+                            1
+                        ]
+                    ]
+                }
+            }
+        },
+        {
+            "id": "airport_with_code_runway",
+            "type": "symbol",
+            "source": "openaip",
+            "source-layer": "airport",
+            "minzoom": 9,
+            "maxzoom": 24,
+            "filter": [
+                "all",
+                [
+                    "in",
+                    "runway_surface",
+                    "paved",
+                    "unpaved"
+                ],
+                [
+                    "!in",
+                    "type_label",
+                    "ad_closed",
+                    "af_water",
+                    "heli_civil",
+                    "heli_mil",
+                    "intl_apt"
+                ],
+                [
+                    "has",
+                    "icao_code"
+                ]
+            ],
+            "layout": {
+                "icon-image": {
+                    "stops": [
+                        [
+                            9,
+                            "runway_{runway_surface}-medium"
+                        ],
+                        [
+                            17,
+                            "runway_{runway_surface}-large"
+                        ]
+                    ]
+                },
+                "icon-allow-overlap": true,
+                "icon-rotate": {
+                    "type": "identity",
+                    "property": "runway_rotation"
+                },
+                "visibility": "visible",
+                "icon-padding": 0,
+                "icon-size": {
+                    "stops": [
+                        [
+                            9,
+                            0.8
+                        ],
+                        [
+                            10,
+                            0.9
+                        ],
+                        [
+                            15,
+                            1
+                        ]
+                    ]
+                },
+                "icon-ignore-placement": false,
+                "icon-optional": false
+            }
+        },
+        {
+            "id": "airport_with_code",
+            "type": "symbol",
+            "source": "openaip",
+            "source-layer": "airport",
+            "minzoom": 7,
+            "maxzoom": 24,
+            "filter": [
+                "all",
+                [
+                    "!=",
+                    "type_label",
+                    "intl_apt"
+                ],
+                [
+                    "has",
+                    "icao_code"
+                ]
+            ],
+            "layout": {
+                "icon-image": {
+                    "stops": [
+                        [
+                            7,
+                            "apt-dot"
+                        ],
+                        [
+                            8,
+                            "{type_label}-small"
+                        ],
+                        [
+                            9,
+                            "{type_label}-medium"
+                        ],
+                        [
+                            17,
+                            "{type_label}-large"
+                        ]
+                    ]
+                },
+                "icon-size": {
+                    "stops": [
+                        [
+                            7,
+                            0.3
+                        ],
+                        [
+                            10,
+                            1
+                        ]
+                    ]
+                },
+                "text-allow-overlap": true,
+                "text-ignore-placement": false,
+                "icon-allow-overlap": true,
+                "text-field": {
+                    "stops": [
+                        [
+                            7,
+                            "{icao_code}"
+                        ],
+                        [
+                            9,
+                            "{label_full}"
+                        ]
+                    ]
+                },
+                "text-justify": "left",
+                "text-anchor": "center",
+                "text-offset": {
+                    "stops": [
+                        [
+                            7,
+                            [
+                                0,
+                                -1.5
+                            ]
+                        ],
+                        [
+                            8,
+                            [
+                                0,
+                                -2
+                            ]
+                        ],
+                        [
+                            9,
+                            [
+                                0,
+                                -4
+                            ]
+                        ],
+                        [
+                            10,
+                            [
+                                0,
+                                -4
+                            ]
+                        ]
+                    ]
+                },
+                "text-size": {
+                    "stops": [
+                        [
+                            7,
+                            9
+                        ],
+                        [
+                            8,
+                            10
+                        ],
+                        [
+                            10,
+                            12
+                        ]
+                    ]
+                },
+                "visibility": "visible",
+                "text-font": {
+                    "stops": [
+                        [
+                            7,
+                            [
+                                "DIN Offc Pro Medium",
+                                "Arial Unicode MS Regular"
+                            ]
+                        ],
+                        [
+                            9,
+                            [
+                                "DIN Offc Pro Regular",
+                                "Arial Unicode MS Regular"
+                            ]
+                        ]
+                    ]
+                },
+                "text-transform": "none",
+                "text-padding": 2,
+                "icon-ignore-placement": false
             },
             "paint": {
                 "icon-color": "rgba(191, 45, 45, 1)",
                 "text-halo-color": "rgba(255, 255, 255, 1)",
                 "text-halo-width": 2,
-                "text-halo-blur": 1
+                "text-halo-blur": 1,
+                "icon-opacity": 1,
+                "text-opacity": {
+                    "stops": [
+                        [
+                            7,
+                            0
+                        ],
+                        [
+                            8,
+                            1
+                        ]
+                    ]
+                }
+            }
+        },
+        {
+            "id": "airport_runwayt_intl",
+            "type": "symbol",
+            "source": "openaip",
+            "source-layer": "airport",
+            "minzoom": 8,
+            "maxzoom": 24,
+            "filter": [
+                "all",
+                [
+                    "in",
+                    "runway_surface",
+                    "paved",
+                    "unpaved"
+                ],
+                [
+                    "==",
+                    "type_label",
+                    "intl_apt"
+                ]
+            ],
+            "layout": {
+                "icon-image": {
+                    "stops": [
+                        [
+                            7,
+                            "runway_{runway_surface}-small"
+                        ],
+                        [
+                            8,
+                            "runway_{runway_surface}-medium"
+                        ],
+                        [
+                            17,
+                            "runway_{runway_surface}-large"
+                        ]
+                    ]
+                },
+                "icon-allow-overlap": true,
+                "icon-rotate": {
+                    "type": "identity",
+                    "property": "runway_rotation"
+                },
+                "visibility": "visible",
+                "icon-padding": 0,
+                "icon-size": 1,
+                "text-allow-overlap": false
+            }
+        },
+        {
+            "id": "airport_intl",
+            "type": "symbol",
+            "source": "openaip",
+            "source-layer": "airport",
+            "minzoom": 3,
+            "maxzoom": 24,
+            "filter": [
+                "all",
+                [
+                    "==",
+                    "type_label",
+                    "intl_apt"
+                ]
+            ],
+            "layout": {
+                "icon-image": {
+                    "stops": [
+                        [
+                            5,
+                            "apt-dot"
+                        ],
+                        [
+                            6,
+                            "apt-tiny"
+                        ],
+                        [
+                            8,
+                            "apt-medium"
+                        ]
+                    ]
+                },
+                "icon-size": {
+                    "stops": [
+                        [
+                            3,
+                            0.1
+                        ],
+                        [
+                            5,
+                            0.4
+                        ],
+                        [
+                            8,
+                            1
+                        ]
+                    ]
+                },
+                "text-allow-overlap": true,
+                "text-ignore-placement": false,
+                "icon-allow-overlap": true,
+                "text-field": {
+                    "stops": [
+                        [
+                            6,
+                            "{icao_code}"
+                        ],
+                        [
+                            8,
+                            "{label_full}"
+                        ]
+                    ]
+                },
+                "text-justify": "left",
+                "text-anchor": "center",
+                "text-offset": {
+                    "stops": [
+                        [
+                            7,
+                            [
+                                0,
+                                -2
+                            ]
+                        ],
+                        [
+                            8,
+                            [
+                                0,
+                                -4
+                            ]
+                        ],
+                        [
+                            10,
+                            [
+                                0,
+                                -5
+                            ]
+                        ]
+                    ]
+                },
+                "text-size": {
+                    "stops": [
+                        [
+                            3,
+                            0
+                        ],
+                        [
+                            4,
+                            5
+                        ],
+                        [
+                            6,
+                            12
+                        ]
+                    ]
+                },
+                "visibility": "visible",
+                "text-font": [
+                    "DIN Offc Pro Bold",
+                    "Arial Unicode MS Bold"
+                ],
+                "text-transform": "none",
+                "icon-ignore-placement": false,
+                "icon-optional": false
+            },
+            "paint": {
+                "icon-color": "rgba(191, 45, 45, 1)",
+                "text-halo-color": "rgba(255, 255, 255, 1)",
+                "text-halo-width": 2,
+                "text-halo-blur": 1,
+                "icon-opacity": 1,
+                "text-opacity": {
+                    "stops": [
+                        [
+                            3,
+                            0
+                        ],
+                        [
+                            4,
+                            0.5
+                        ],
+                        [
+                            6,
+                            1
+                        ]
+                    ]
+                }
             }
         },
         {
@@ -13625,7 +14376,9 @@
                     ]
                 },
                 "text-allow-overlap": true,
-                "icon-allow-overlap": true
+                "icon-allow-overlap": true,
+                "visibility": "visible",
+                "text-size": 16
             }
         },
         {
@@ -13661,7 +14414,9 @@
                     ]
                 },
                 "text-allow-overlap": false,
-                "icon-allow-overlap": true
+                "icon-allow-overlap": true,
+                "visibility": "visible",
+                "text-size": 16
             }
         },
         {
@@ -13711,18 +14466,107 @@
                         ]
                     ]
                 },
-                "icon-allow-overlap": false
+                "icon-allow-overlap": false,
+                "visibility": "visible"
             }
         },
         {
             "id": "navaid_clicktarget",
             "type": "circle",
+            "metadata": {
+                "maputnik:comment": "Click-target style for external javascripts."
+            },
             "source": "openaip",
             "source-layer": "navaid",
-            "minzoom": 0,
+            "minzoom": 6,
             "maxzoom": 24,
+            "layout": {
+                "visibility": "visible"
+            },
             "paint": {
                 "circle-opacity": 0
+            }
+        },
+        {
+            "id": "navaid_other",
+            "type": "symbol",
+            "source": "openaip",
+            "source-layer": "navaid",
+            "minzoom": 6,
+            "filter": [
+                "all",
+                [
+                    "!in",
+                    "type_label",
+                    "ndb"
+                ]
+            ],
+            "layout": {
+                "icon-image": {
+                    "stops": [
+                        [
+                            6,
+                            "navaid_{type_label}-small"
+                        ],
+                        [
+                            8,
+                            "navaid_{type_label}-medium"
+                        ]
+                    ]
+                },
+                "icon-allow-overlap": true,
+                "visibility": "visible",
+                "text-field": {
+                    "stops": [
+                        [
+                            6,
+                            "{identifier}"
+                        ],
+                        [
+                            9,
+                            "{label}"
+                        ]
+                    ]
+                },
+                "text-allow-overlap": true,
+                "text-offset": {
+                    "stops": [
+                        [
+                            6,
+                            [
+                                0,
+                                1.2
+                            ]
+                        ],
+                        [
+                            8,
+                            [
+                                0,
+                                1.8
+                            ]
+                        ],
+                        [
+                            10,
+                            [
+                                0,
+                                2.5
+                            ]
+                        ]
+                    ]
+                },
+                "text-size": 12,
+                "text-font": [
+                    "DIN Offc Pro Regular",
+                    "Arial Unicode MS Regular"
+                ],
+                "icon-ignore-placement": false,
+                "text-ignore-placement": true
+            },
+            "paint": {
+                "text-halo-width": 2,
+                "text-color": "rgba(0, 0, 0, 1)",
+                "text-halo-blur": 1,
+                "text-halo-color": "rgba(255, 255, 255, 1)"
             }
         },
         {
@@ -13759,7 +14603,7 @@
                             "{identifier}"
                         ],
                         [
-                            10,
+                            9,
                             "{label}"
                         ]
                     ]
@@ -13767,10 +14611,16 @@
                 "symbol-placement": "point",
                 "text-size": 12,
                 "text-font": [
-                    "DIN Offc Pro Bold",
-                    "Arial Unicode MS Bold"
+                    "DIN Offc Pro Regular",
+                    "Arial Unicode MS Regular"
                 ],
-                "text-justify": "left"
+                "text-justify": "left",
+                "visibility": "visible",
+                "text-allow-overlap": true,
+                "text-ignore-placement": true,
+                "icon-allow-overlap": true,
+                "icon-ignore-placement": false,
+                "icon-optional": false
             },
             "paint": {
                 "icon-opacity": {
@@ -13812,85 +14662,10 @@
                             ]
                         ]
                     ]
-                }
-            }
-        },
-        {
-            "id": "navaid_other",
-            "type": "symbol",
-            "source": "openaip",
-            "source-layer": "navaid",
-            "minzoom": 6,
-            "filter": [
-                "all",
-                [
-                    "!in",
-                    "type_label",
-                    "ndb"
-                ]
-            ],
-            "layout": {
-                "icon-image": {
-                    "stops": [
-                        [
-                            6,
-                            "navaid_{type_label}-small"
-                        ],
-                        [
-                            8,
-                            "navaid_{type_label}-medium"
-                        ]
-                    ]
                 },
-                "icon-allow-overlap": true,
-                "visibility": "visible",
-                "text-field": {
-                    "stops": [
-                        [
-                            6,
-                            "{identifier}"
-                        ],
-                        [
-                            11,
-                            "{label}"
-                        ]
-                    ]
-                },
-                "text-allow-overlap": true,
-                "text-offset": {
-                    "stops": [
-                        [
-                            6,
-                            [
-                                0,
-                                1.2
-                            ]
-                        ],
-                        [
-                            8,
-                            [
-                                0,
-                                1.8
-                            ]
-                        ],
-                        [
-                            10,
-                            [
-                                0,
-                                2.5
-                            ]
-                        ]
-                    ]
-                },
-                "text-size": 12,
-                "text-font": [
-                    "DIN Offc Pro Bold",
-                    "Arial Unicode MS Bold"
-                ]
-            },
-            "paint": {
-                "text-halo-width": 1,
-                "text-color": "rgba(0, 0, 0, 1)"
+                "icon-halo-color": "rgba(255, 255, 255, 1)",
+                "icon-halo-width": 2,
+                "icon-halo-blur": 1
             }
         },
         {
@@ -13898,7 +14673,7 @@
             "type": "symbol",
             "source": "openaip",
             "source-layer": "navaid",
-            "minzoom": 6,
+            "minzoom": 8,
             "filter": [
                 "all",
                 [
@@ -13910,427 +14685,34 @@
                 ]
             ],
             "layout": {
-                "icon-image": {
-                    "stops": [
-                        [
-                            6,
-                            "navaid_rose-small"
-                        ],
-                        [
-                            8,
-                            "navaid_rose-medium"
-                        ],
-                        [
-                            11,
-                            "navaid_rose-large"
-                        ]
-                    ]
-                },
-                "icon-allow-overlap": false,
+                "icon-image": "navaid_rose-medium",
+                "icon-allow-overlap": true,
                 "icon-rotate": {
                     "type": "identity",
                     "property": "icon_rotation"
-                }
-            }
-        },
-        {
-            "id": "hotspot_clicktarget",
-            "type": "circle",
-            "source": "openaip",
-            "source-layer": "hotspot",
-            "minzoom": 0,
-            "maxzoom": 24,
-            "paint": {
-                "circle-opacity": 0
-            }
-        },
-        {
-            "id": "hotspot_times_late_evening",
-            "type": "symbol",
-            "source": "openaip",
-            "source-layer": "hotspot",
-            "minzoom": 13,
-            "filter": [
-                "any",
-                [
-                    "in",
-                    "time_of_day_late_evening",
-                    "normal",
-                    "favorite"
-                ]
-            ],
-            "layout": {
-                "icon-image": "hotspot_times_late_evening_{time_of_day_late_evening}-large",
-                "visibility": "visible",
-                "symbol-placement": "point",
-                "icon-allow-overlap": true,
-                "icon-rotation-alignment": "map"
-            },
-            "paint": {
-                "icon-opacity": 1,
-                "text-halo-color": "rgba(255, 255, 255, 1)",
-                "text-halo-width": 1,
-                "icon-translate-anchor": "map"
-            }
-        },
-        {
-            "id": "hotspot_times_evening",
-            "type": "symbol",
-            "source": "openaip",
-            "source-layer": "hotspot",
-            "minzoom": 13,
-            "filter": [
-                "any",
-                [
-                    "in",
-                    "time_of_day_evening",
-                    "normal",
-                    "favorite"
-                ]
-            ],
-            "layout": {
-                "icon-image": "hotspot_times_evening_{time_of_day_evening}-large",
-                "visibility": "visible",
-                "symbol-placement": "point",
-                "icon-allow-overlap": true,
-                "icon-rotation-alignment": "map"
-            },
-            "paint": {
-                "icon-opacity": 1,
-                "text-halo-color": "rgba(255, 255, 255, 1)",
-                "text-halo-width": 1,
-                "icon-translate-anchor": "map"
-            }
-        },
-        {
-            "id": "hotspot_times_day-copy",
-            "type": "symbol",
-            "source": "openaip",
-            "source-layer": "hotspot",
-            "minzoom": 13,
-            "filter": [
-                "any",
-                [
-                    "in",
-                    "time_of_day_day",
-                    "normal",
-                    "favorite"
-                ]
-            ],
-            "layout": {
-                "icon-image": "hotspot_times_day_{time_of_day_day}-large",
-                "visibility": "visible",
-                "symbol-placement": "point",
-                "icon-allow-overlap": true,
-                "icon-rotation-alignment": "map"
-            },
-            "paint": {
-                "icon-opacity": 1,
-                "text-halo-color": "rgba(255, 255, 255, 1)",
-                "text-halo-width": 1,
-                "icon-translate-anchor": "map"
-            }
-        },
-        {
-            "id": "hotspot_times_noon",
-            "type": "symbol",
-            "source": "openaip",
-            "source-layer": "hotspot",
-            "minzoom": 13,
-            "filter": [
-                "any",
-                [
-                    "in",
-                    "time_of_day_noon",
-                    "normal",
-                    "favorite"
-                ]
-            ],
-            "layout": {
-                "icon-image": "hotspot_times_noon_{time_of_day_noon}-large",
-                "visibility": "visible",
-                "symbol-placement": "point",
-                "icon-allow-overlap": true,
-                "icon-rotation-alignment": "map"
-            },
-            "paint": {
-                "icon-opacity": 1,
-                "text-halo-color": "rgba(255, 255, 255, 1)",
-                "text-halo-width": 1,
-                "icon-translate-anchor": "map"
-            }
-        },
-        {
-            "id": "hotspot_times_morning",
-            "type": "symbol",
-            "source": "openaip",
-            "source-layer": "hotspot",
-            "minzoom": 13,
-            "filter": [
-                "any",
-                [
-                    "in",
-                    "time_of_day_morning",
-                    "normal",
-                    "favorite"
-                ]
-            ],
-            "layout": {
-                "icon-image": "hotspot_times_morning_{time_of_day_morning}-large",
-                "visibility": "visible",
-                "symbol-placement": "point",
-                "icon-allow-overlap": true,
-                "icon-rotation-alignment": "map"
-            },
-            "paint": {
-                "icon-opacity": 1,
-                "text-halo-color": "rgba(255, 255, 255, 1)",
-                "text-halo-width": 1,
-                "icon-translate-anchor": "map"
-            }
-        },
-        {
-            "id": "hotspot_wind_315",
-            "type": "symbol",
-            "source": "openaip",
-            "source-layer": "hotspot",
-            "layout": {
-                "icon-image": "hotspot_wind_{wind_direction_315}",
-                "icon-rotate": 315,
-                "icon-offset": [
-                    0,
-                    -35
-                ],
-                "icon-allow-overlap": true
-            }
-        },
-        {
-            "id": "hotspot_wind_270",
-            "type": "symbol",
-            "source": "openaip",
-            "source-layer": "hotspot",
-            "layout": {
-                "icon-image": "hotspot_wind_{wind_direction_270}",
-                "icon-rotate": 270,
-                "icon-offset": [
-                    0,
-                    -35
-                ],
-                "icon-allow-overlap": true
-            }
-        },
-        {
-            "id": "hotspot_wind_225",
-            "type": "symbol",
-            "source": "openaip",
-            "source-layer": "hotspot",
-            "layout": {
-                "icon-image": "hotspot_wind_{wind_direction_225}",
-                "icon-rotate": 225,
-                "icon-offset": [
-                    0,
-                    -35
-                ],
-                "icon-allow-overlap": true
-            }
-        },
-        {
-            "id": "hotspot_wind_180",
-            "type": "symbol",
-            "source": "openaip",
-            "source-layer": "hotspot",
-            "layout": {
-                "icon-image": "hotspot_wind_{wind_direction_180}",
-                "icon-rotate": 180,
-                "icon-offset": [
-                    0,
-                    -35
-                ],
-                "icon-allow-overlap": true
-            }
-        },
-        {
-            "id": "hotspot_wind_135",
-            "type": "symbol",
-            "source": "openaip",
-            "source-layer": "hotspot",
-            "layout": {
-                "icon-image": "hotspot_wind_{wind_direction_135}",
-                "icon-rotate": 135,
-                "icon-offset": [
-                    0,
-                    -35
-                ],
-                "icon-allow-overlap": true
-            }
-        },
-        {
-            "id": "hotspot_wind_90",
-            "type": "symbol",
-            "source": "openaip",
-            "source-layer": "hotspot",
-            "layout": {
-                "icon-image": "hotspot_wind_{wind_direction_90}",
-                "icon-rotate": 90,
-                "icon-offset": [
-                    0,
-                    -35
-                ],
-                "icon-allow-overlap": true
-            }
-        },
-        {
-            "id": "hotspot_wind_45",
-            "type": "symbol",
-            "source": "openaip",
-            "source-layer": "hotspot",
-            "layout": {
-                "icon-image": "hotspot_wind_{wind_direction_45}",
-                "icon-rotate": 45,
-                "icon-offset": [
-                    0,
-                    -35
-                ],
-                "icon-allow-overlap": true
-            }
-        },
-        {
-            "id": "hotspot_wind_0",
-            "type": "symbol",
-            "source": "openaip",
-            "source-layer": "hotspot",
-            "layout": {
-                "icon-image": "hotspot_wind_{wind_direction_0}",
-                "icon-rotate": 0,
-                "icon-offset": [
-                    0,
-                    -35
-                ],
-                "icon-allow-overlap": true
-            }
-        },
-        {
-            "id": "hotspot_cloud",
-            "type": "symbol",
-            "source": "openaip",
-            "source-layer": "hotspot",
-            "minzoom": 8,
-            "layout": {
-                "icon-image": {
-                    "stops": [
-                        [
-                            8,
-                            "hotspot_{reliability_label}-small"
-                        ],
-                        [
-                            11,
-                            "hotspot_{reliability_label}-medium"
-                        ],
-                        [
-                            13,
-                            "hotspot_{reliability_label}-large"
-                        ]
-                    ]
                 },
-                "text-field": {
-                    "stops": [
-                        [
-                            10,
-                            "{label_short}"
-                        ],
-                        [
-                            13,
-                            "{label_full}"
-                        ]
-                    ]
-                },
-                "text-offset": {
-                    "stops": [
-                        [
-                            10,
-                            [
-                                0,
-                                -1.7
-                            ]
-                        ],
-                        [
-                            12,
-                            [
-                                0,
-                                -3
-                            ]
-                        ],
-                        [
-                            13,
-                            [
-                                0,
-                                -6
-                            ]
-                        ]
-                    ]
-                },
-                "text-size": 12,
                 "visibility": "visible",
-                "symbol-placement": "point",
                 "text-allow-overlap": true,
-                "icon-allow-overlap": true
+                "text-ignore-placement": true,
+                "icon-ignore-placement": true,
+                "icon-optional": false
             },
             "paint": {
                 "icon-opacity": {
                     "stops": [
                         [
                             8,
-                            0.1
+                            0
                         ],
                         [
                             9,
-                            0.5
-                        ],
-                        [
-                            13,
-                            1
-                        ]
-                    ]
-                },
-                "text-halo-color": "rgba(255, 255, 255, 1)",
-                "text-halo-width": 1,
-                "text-opacity": {
-                    "stops": [
-                        [
-                            10,
-                            0.1
-                        ],
-                        [
-                            13,
                             1
                         ]
                     ]
                 }
             }
-        },
-        {
-            "id": "hotspot_industrial",
-            "type": "symbol",
-            "source": "openaip",
-            "source-layer": "hotspot",
-            "minzoom": 13,
-            "filter": [
-                "all",
-                [
-                    "==",
-                    "type_label",
-                    "artificial"
-                ]
-            ],
-            "layout": {
-                "icon-allow-overlap": true,
-                "icon-image": "hotspot_industrial",
-                "icon-offset": [
-                    0,
-                    55
-                ]
-            }
         }
     ],
-    "id": "openaip-default"
+    "id": "openaip-default",
+    "owner": ""
 }
