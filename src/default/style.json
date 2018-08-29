@@ -11401,7 +11401,7 @@
             }
         },
         {
-            "id": "hotspot_times_day-copy",
+            "id": "hotspot_times_day",
             "type": "symbol",
             "source": "openaip",
             "source-layer": "hotspot",
@@ -11682,7 +11682,9 @@
                 "visibility": "visible",
                 "symbol-placement": "point",
                 "text-allow-overlap": true,
-                "icon-allow-overlap": true
+                "icon-allow-overlap": true,
+                "text-optional": true,
+                "text-ignore-placement": true
             },
             "paint": {
                 "icon-opacity": {
@@ -11753,7 +11755,7 @@
             "type": "fill",
             "source": "openaip",
             "source-layer": "airspace",
-            "minzoom": 7,
+            "minzoom": 5,
             "maxzoom": 24,
             "layout": {
                 "visibility": "visible"
@@ -11768,7 +11770,7 @@
             "type": "line",
             "source": "openaip",
             "source-layer": "airspace",
-            "minzoom": 0,
+            "minzoom": 5,
             "maxzoom": 24,
             "filter": [
                 "all",
@@ -11815,7 +11817,7 @@
             "type": "line",
             "source": "openaip",
             "source-layer": "airspace",
-            "minzoom": 0,
+            "minzoom": 5,
             "maxzoom": 24,
             "filter": [
                 "all",
@@ -11892,7 +11894,7 @@
             "type": "fill",
             "source": "openaip",
             "source-layer": "airspace_border_offset",
-            "minzoom": 0,
+            "minzoom": 5,
             "maxzoom": 24,
             "filter": [
                 "all",
@@ -11943,7 +11945,7 @@
             "type": "fill",
             "source": "openaip",
             "source-layer": "airspace",
-            "minzoom": 0,
+            "minzoom": 5,
             "maxzoom": 24,
             "filter": [
                 "all",
@@ -11976,7 +11978,7 @@
             "type": "line",
             "source": "openaip",
             "source-layer": "airspace",
-            "minzoom": 0,
+            "minzoom": 5,
             "maxzoom": 24,
             "filter": [
                 "all",
@@ -12028,7 +12030,7 @@
             "type": "line",
             "source": "openaip",
             "source-layer": "airspace",
-            "minzoom": 0,
+            "minzoom": 5,
             "maxzoom": 24,
             "filter": [
                 "all",
@@ -12076,7 +12078,7 @@
             "type": "fill",
             "source": "openaip",
             "source-layer": "airspace_border_offset",
-            "minzoom": 0,
+            "minzoom": 5,
             "maxzoom": 24,
             "filter": [
                 "all",
@@ -12123,7 +12125,7 @@
             "type": "line",
             "source": "openaip",
             "source-layer": "airspace",
-            "minzoom": 0,
+            "minzoom": 5,
             "maxzoom": 24,
             "filter": [
                 "all",
@@ -12170,7 +12172,7 @@
             "type": "fill",
             "source": "openaip",
             "source-layer": "airspace_border_offset_2x",
-            "minzoom": 0,
+            "minzoom": 5,
             "maxzoom": 24,
             "filter": [
                 "all",
@@ -12288,11 +12290,105 @@
             }
         },
         {
+            "id": "airspace_sector-border",
+            "type": "line",
+            "source": "openaip",
+            "source-layer": "airspace",
+            "minzoom": 5,
+            "maxzoom": 24,
+            "filter": [
+                "all",
+                [
+                    "==",
+                    "type_label",
+                    "sector"
+                ]
+            ],
+            "layout": {
+                "visibility": "visible"
+            },
+            "paint": {
+                "line-color": {
+                    "stops": [
+                        [
+                            0,
+                            "rgba(255, 215, 0, 1)"
+                        ]
+                    ]
+                },
+                "line-width": {
+                    "stops": [
+                        [
+                            6,
+                            1
+                        ],
+                        [
+                            10,
+                            4
+                        ],
+                        [
+                            20,
+                            20
+                        ]
+                    ]
+                },
+                "line-dasharray": {
+                    "stops": [
+                        [
+                            0,
+                            [
+                                0.1,
+                                0.2
+                            ]
+                        ],
+                        [
+                            6,
+                            [
+                                0.5,
+                                1
+                            ]
+                        ],
+                        [
+                            12,
+                            [
+                                1,
+                                2
+                            ]
+                        ]
+                    ]
+                }
+            }
+        },
+        {
+            "id": "airspace_sector_offset",
+            "type": "fill",
+            "source": "openaip",
+            "source-layer": "airspace_border_offset",
+            "minzoom": 5,
+            "maxzoom": 24,
+            "filter": [
+                "all",
+                [
+                    "==",
+                    "type_label",
+                    "sector"
+                ]
+            ],
+            "layout": {
+                "visibility": "visible"
+            },
+            "paint": {
+                "fill-color": "rgba(255, 215, 0, 1)",
+                "fill-opacity": 0.2,
+                "fill-outline-color": "rgba(218, 111, 134, 0)"
+            }
+        },
+        {
             "id": "airspace_e_border",
             "type": "line",
             "source": "openaip",
             "source-layer": "airspace",
-            "minzoom": 0,
+            "minzoom": 5,
             "maxzoom": 24,
             "filter": [
                 "all",
@@ -12334,40 +12430,11 @@
             }
         },
         {
-            "id": "airspace_e_offset",
-            "type": "fill",
-            "source": "openaip",
-            "source-layer": "airspace_border_offset",
-            "minzoom": 0,
-            "maxzoom": 24,
-            "filter": [
-                "all",
-                [
-                    "==",
-                    "type_label",
-                    "other"
-                ],
-                [
-                    "==",
-                    "icao_class_label",
-                    "e"
-                ]
-            ],
-            "layout": {
-                "visibility": "visible"
-            },
-            "paint": {
-                "fill-color": "rgba(218, 111, 134, 1)",
-                "fill-opacity": 0.2,
-                "fill-outline-color": "rgba(218, 111, 134, 0)"
-            }
-        },
-        {
             "id": "airspace_f_border",
             "type": "line",
             "source": "openaip",
             "source-layer": "airspace",
-            "minzoom": 0,
+            "minzoom": 5,
             "maxzoom": 24,
             "filter": [
                 "all",
@@ -12413,7 +12480,7 @@
             "type": "fill",
             "source": "openaip",
             "source-layer": "airspace_border_offset_2x",
-            "minzoom": 0,
+            "minzoom": 5,
             "maxzoom": 24,
             "filter": [
                 "all",
@@ -12438,11 +12505,89 @@
             }
         },
         {
+            "id": "airspace_g_border",
+            "type": "line",
+            "source": "openaip",
+            "source-layer": "airspace",
+            "minzoom": 5,
+            "maxzoom": 24,
+            "filter": [
+                "all",
+                [
+                    "==",
+                    "type_label",
+                    "other"
+                ],
+                [
+                    "==",
+                    "icao_class_label",
+                    "g"
+                ]
+            ],
+            "layout": {
+                "visibility": "visible"
+            },
+            "paint": {
+                "line-color": {
+                    "stops": [
+                        [
+                            0,
+                            "rgba(21, 77, 154, 0.5)"
+                        ]
+                    ]
+                },
+                "line-width": {
+                    "stops": [
+                        [
+                            6,
+                            0.1
+                        ],
+                        [
+                            10,
+                            2
+                        ]
+                    ]
+                },
+                "line-dasharray": [
+                    5
+                ]
+            }
+        },
+        {
+            "id": "airspace_g_offset",
+            "type": "fill",
+            "source": "openaip",
+            "source-layer": "airspace_border_offset_2x",
+            "minzoom": 5,
+            "maxzoom": 24,
+            "filter": [
+                "all",
+                [
+                    "==",
+                    "type_label",
+                    "other"
+                ],
+                [
+                    "==",
+                    "icao_class_label",
+                    "g"
+                ]
+            ],
+            "layout": {
+                "visibility": "visible"
+            },
+            "paint": {
+                "fill-color": "rgba(118, 145, 195, 0.1)",
+                "fill-opacity": 0.5,
+                "fill-outline-color": "rgba(118, 145, 195, 0)"
+            }
+        },
+        {
             "id": "airspace_ctr_fill",
             "type": "fill",
             "source": "openaip",
             "source-layer": "airspace",
-            "minzoom": 0,
+            "minzoom": 5,
             "maxzoom": 24,
             "filter": [
                 "all",
@@ -12465,7 +12610,7 @@
             "type": "line",
             "source": "openaip",
             "source-layer": "airspace",
-            "minzoom": 0,
+            "minzoom": 5,
             "maxzoom": 24,
             "filter": [
                 "all",
@@ -12531,7 +12676,7 @@
             "type": "line",
             "source": "openaip",
             "source-layer": "airspace",
-            "minzoom": 0,
+            "minzoom": 5,
             "maxzoom": 24,
             "filter": [
                 "all",
@@ -12603,7 +12748,7 @@
             "type": "line",
             "source": "openaip",
             "source-layer": "airspace",
-            "minzoom": 0,
+            "minzoom": 5,
             "maxzoom": 24,
             "filter": [
                 "all",
@@ -12675,7 +12820,7 @@
             "type": "line",
             "source": "openaip",
             "source-layer": "airspace",
-            "minzoom": 0,
+            "minzoom": 5,
             "maxzoom": 24,
             "filter": [
                 "all",
@@ -12726,7 +12871,7 @@
             "type": "fill",
             "source": "openaip",
             "source-layer": "airspace",
-            "minzoom": 0,
+            "minzoom": 5,
             "maxzoom": 24,
             "filter": [
                 "all",
@@ -12754,7 +12899,7 @@
             "type": "line",
             "source": "openaip",
             "source-layer": "airspace",
-            "minzoom": 0,
+            "minzoom": 5,
             "maxzoom": 24,
             "filter": [
                 "all",
@@ -12826,7 +12971,7 @@
             "type": "line",
             "source": "openaip",
             "source-layer": "airspace",
-            "minzoom": 0,
+            "minzoom": 5,
             "maxzoom": 24,
             "filter": [
                 "all",
@@ -12872,7 +13017,7 @@
             "type": "fill",
             "source": "openaip",
             "source-layer": "airspace_border_offset",
-            "minzoom": 0,
+            "minzoom": 5,
             "maxzoom": 24,
             "filter": [
                 "all",
@@ -12897,11 +13042,11 @@
             }
         },
         {
-            "id": "airspace_fir_border-copy",
+            "id": "airspace_fir_border",
             "type": "line",
             "source": "openaip",
             "source-layer": "airspace",
-            "minzoom": 0,
+            "minzoom": 5,
             "maxzoom": 24,
             "filter": [
                 "all",
@@ -12965,11 +13110,11 @@
             }
         },
         {
-            "id": "airspace_fir_border",
+            "id": "airspace_uir_border",
             "type": "line",
             "source": "openaip",
             "source-layer": "airspace",
-            "minzoom": 0,
+            "minzoom": 5,
             "maxzoom": 24,
             "filter": [
                 "all",
@@ -13037,14 +13182,15 @@
             "type": "line",
             "source": "openaip",
             "source-layer": "airspace",
-            "minzoom": 0,
+            "minzoom": 5,
             "maxzoom": 24,
             "filter": [
                 "all",
                 [
-                    "==",
+                    "in",
                     "type_label",
-                    "mtr"
+                    "mtr",
+                    "awy"
                 ]
             ],
             "layout": {
@@ -13079,7 +13225,7 @@
             "type": "fill",
             "source": "openaip",
             "source-layer": "airspace_border_offset",
-            "minzoom": 0,
+            "minzoom": 5,
             "maxzoom": 24,
             "filter": [
                 "all",
@@ -13120,7 +13266,7 @@
             "type": "fill",
             "source": "openaip",
             "source-layer": "airspace",
-            "minzoom": 0,
+            "minzoom": 5,
             "maxzoom": 24,
             "filter": [
                 "all",
@@ -13144,7 +13290,7 @@
             "type": "line",
             "source": "openaip",
             "source-layer": "airspace",
-            "minzoom": 0,
+            "minzoom": 5,
             "maxzoom": 24,
             "filter": [
                 "all",
@@ -13188,7 +13334,7 @@
             "type": "fill",
             "source": "openaip",
             "source-layer": "airspace_border_offset",
-            "minzoom": 0,
+            "minzoom": 5,
             "maxzoom": 24,
             "filter": [
                 "all",
@@ -13230,7 +13376,7 @@
             "type": "line",
             "source": "openaip",
             "source-layer": "airspace",
-            "minzoom": 0,
+            "minzoom": 5,
             "maxzoom": 24,
             "filter": [
                 "all",
@@ -13300,11 +13446,11 @@
             }
         },
         {
-            "id": "airspace_alwapro_offset-copy",
+            "id": "airspace_alwapro_offset",
             "type": "fill",
             "source": "openaip",
             "source-layer": "airspace_border_offset",
-            "minzoom": 0,
+            "minzoom": 5,
             "maxzoom": 24,
             "filter": [
                 "all",
@@ -13351,7 +13497,7 @@
             "type": "line",
             "source": "openaip",
             "source-layer": "airspace",
-            "minzoom": 0,
+            "minzoom": 5,
             "maxzoom": 24,
             "filter": [
                 "all",
@@ -13393,7 +13539,7 @@
             "type": "fill",
             "source": "openaip",
             "source-layer": "airspace_border_offset_2x",
-            "minzoom": 0,
+            "minzoom": 5,
             "maxzoom": 24,
             "filter": [
                 "all",
@@ -13676,7 +13822,7 @@
             "type": "line",
             "source": "openaip",
             "source-layer": "airport_traffic_circuit",
-            "minzoom": 11,
+            "minzoom": 13,
             "layout": {
                 "line-cap": "round",
                 "line-join": "round",
@@ -13685,23 +13831,72 @@
             },
             "paint": {
                 "line-translate-anchor": "map",
-                "line-color": {
+                "line-color": "rgba(57, 79, 94, 0.4)",
+                "line-width": {
                     "stops": [
                         [
-                            11,
-                            "rgba(32, 48, 64, 0.2)"
+                            13,
+                            1
                         ],
                         [
-                            12,
-                            "rgba(32, 48, 64, 0.4)"
-                        ],
-                        [
-                            16,
-                            "rgba(32, 48, 64, 0.8)"
+                            14,
+                            2
                         ]
                     ]
                 },
-                "line-width": 3
+                "line-opacity": {
+                    "stops": [
+                        [
+                            13,
+                            0
+                        ],
+                        [
+                            14,
+                            1
+                        ]
+                    ]
+                }
+            }
+        },
+        {
+            "id": "airport_traffic_circuit_label",
+            "type": "symbol",
+            "source": "openaip",
+            "source-layer": "airport_traffic_circuit",
+            "minzoom": 13,
+            "layout": {
+                "visibility": "visible",
+                "text-field": "{type_label_full}",
+                "text-allow-overlap": true,
+                "text-ignore-placement": false,
+                "text-anchor": "center",
+                "symbol-avoid-edges": true,
+                "symbol-placement": "line-center",
+                "text-size": 12,
+                "text-justify": "center",
+                "text-letter-spacing": 0,
+                "text-pitch-alignment": "auto",
+                "text-max-angle": 45,
+                "text-keep-upright": true,
+                "text-optional": true
+            },
+            "paint": {
+                "text-color": "rgba(57, 79, 94, 1)",
+                "text-halo-color": "rgba(255, 255, 255, 1)",
+                "text-halo-width": 2,
+                "text-halo-blur": 0,
+                "text-opacity": {
+                    "stops": [
+                        [
+                            13,
+                            0
+                        ],
+                        [
+                            14,
+                            1
+                        ]
+                    ]
+                }
             }
         },
         {
@@ -13903,7 +14098,8 @@
                             ]
                         ]
                     ]
-                }
+                },
+                "text-optional": true
             },
             "paint": {
                 "icon-color": "rgba(191, 45, 45, 1)",
@@ -14017,7 +14213,8 @@
                     ]
                 },
                 "text-allow-overlap": true,
-                "text-ignore-placement": true
+                "text-ignore-placement": true,
+                "text-optional": true
             },
             "paint": {
                 "icon-color": "rgba(191, 45, 45, 1)",
@@ -14135,7 +14332,8 @@
                         ]
                     ]
                 },
-                "icon-ignore-placement": false
+                "icon-ignore-placement": false,
+                "text-optional": true
             },
             "paint": {
                 "icon-color": "rgba(191, 45, 45, 1)",
@@ -14621,6 +14819,20 @@
                 "icon-allow-overlap": true,
                 "visibility": "visible",
                 "text-size": 16
+            },
+            "paint": {
+                "icon-opacity": {
+                    "stops": [
+                        [
+                            10,
+                            0.4
+                        ],
+                        [
+                            11,
+                            1
+                        ]
+                    ]
+                }
             }
         },
         {
@@ -14635,7 +14847,7 @@
                 [
                     "==",
                     "type_label",
-                    "on-request"
+                    "on_request"
                 ]
             ],
             "layout": {
@@ -14659,6 +14871,20 @@
                 "icon-allow-overlap": true,
                 "visibility": "visible",
                 "text-size": 16
+            },
+            "paint": {
+                "icon-opacity": {
+                    "stops": [
+                        [
+                            10,
+                            0.4
+                        ],
+                        [
+                            11,
+                            1
+                        ]
+                    ]
+                }
             }
         },
         {
