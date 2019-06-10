@@ -2,10 +2,7 @@
     "version": 8,
     "name": "Default openAIP map style",
     "metadata": {},
-    "center": [
-        8.54806714892635,
-        47.37180823552663
-    ],
+    "center": [8.54806714892635, 47.37180823552663],
     "zoom": 12.241790506353492,
     "bearing": 0,
     "pitch": 0,
@@ -17,11 +14,15 @@
         "openaip": {
             "type": "vector",
             "tiles": [
-                "https://staging.maps.openaip.net/data/openaip/{z}/{x}/{y}.pbf"
+                "https://a.tiles.openaip.net/data/openaip/{z}/{x}/{y}.pbf",
+                "https://b.tiles.openaip.net/data/openaip/{z}/{x}/{y}.pbf",
+                "https://c.tiles.openaip.net/data/openaip/{z}/{x}/{y}.pbf",
+                "https://d.tiles.openaip.net/data/openaip/{z}/{x}/{y}.pbf",
+                "https://e.tiles.openaip.net/data/openaip/{z}/{x}/{y}.pbf"
             ]
         }
     },
-    "sprite": "https://staging.static.openaip.net/assets/dist/maps/styles/default/sprite",
+    "sprite": "https://static.openaip.net/assets/dist/maps/styles/default/sprite",
     "glyphs": "mapbox://fonts/mapbox/{fontstack}/{range}.pbf",
     "layers": [
         {
