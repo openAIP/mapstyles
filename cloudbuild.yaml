@@ -23,7 +23,7 @@ steps:
     -   name: 'gcr.io/cloud-builders/gsutil'
         args: ['cp', '-Z', '-r', '/workspace/dist', 'gs://openaip-build-web-assets/$BRANCH_NAME-$COMMIT_SHA/']
         id: 'copy-app-assets-to-buckets'
-        waitFor: ['build-style-default']
+        waitFor: ['set-environment-uris']
 
 # overwrite the default timeout of 10min and set it to a reasonable time window required for all above steps to complete
 timeout: '1200s'
