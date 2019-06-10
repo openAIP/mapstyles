@@ -1,0 +1,29 @@
+#############################################################################################
+### BUILDS MAP STYLES AND MOVES THEM TO BUCKET
+#############################################################################################
+steps:
+    -   name: 'node:8'
+        args: ['npm', 'install']
+        id: 'npm-install'
+        waitFor: ['-']  # step begins immediately
+
+    # adjust project files to target environment
+    -   name: 'gcr.io/cloud-builders/gsutil'
+        args: ['sh', './set_environment.sh', 'production']
+        id: 'set-environment-uris'
+        waitFor: ['npm-install']
+
+    # build map style
+    -   name: 'node:8'
+        args: ['npm', 'run', 'build:style:default']
+        id: 'build-style-default'
+        waitFor: ['set-environment-uris']
+
+    # copy styles to bucket
+    -   name: 'gcr.io/cloud-builders/gsutil'
+        args: ['cp', '-Z', '-r', '/workspace/dist', 'gs://openaip-build-web-assets/$BRANCH_NAME-$COMMIT_SHA/']
+        id: 'copy-app-assets-to-buckets'
+        waitFor: ['set-environment-uris']
+
+# overwrite the default timeout of 10min and set it to a reasonable time window required for all above steps to complete
+timeout: '1200s'

@@ -3,18 +3,20 @@
     "authors": [
         "Stephan Besser <stephan@openaip.net>"
     ],
-    "description": "Worldwide aviation database",
+    "description": "Mapbox GL style definition for the MVT of openaip",
     "homepage": "https://www.openaip.net",
     "private": false,
     "license": "MIT",
+    "engines": {
+        "node": ">=8.0 <9.0"
+    },
     "dependencies": {
         "@mapbox/spritezero-cli": "^2.1.0"
     },
     "scripts": {
-        "_createDirs": "mkdir -p ./dist/styles/default",
+        "_createDirs": "mkdir -p ./dist/maps/styles/default",
         "_cleanDirs": "rm -rf ./dist",
         "_resetDirs": "npm run _cleanDirs && npm run _createDirs",
-        "_buildDefaultStyle": "spritezero --ratio=1 ./dist/styles/default/sprite ./src/default/sprites-src/ && spritezero --ratio=2 ./dist/styles/default/sprite@2x ./src/default/sprites-src/ && cp ./src/default/style.json ./dist/styles/default/style.json && cp -r ./src/default/fonts ./dist/styles/default",
-        "build:styles": "npm run _resetDirs && npm run _buildDefaultStyle"
+        "build:style:default": "npm run _resetDirs && spritezero --ratio=1 ./dist/maps/styles/default/sprite ./src/default/sprites-src/ && spritezero --ratio=2 ./dist/maps/styles/default/sprite@2x ./src/default/sprites-src/ && cp ./src/default/style.json ./dist/maps/styles/default/style.json && cp -r ./src/default/fonts ./dist/maps/styles/default"
     }
 }
