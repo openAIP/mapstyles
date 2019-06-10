@@ -8,7 +8,7 @@ steps:
         waitFor: ['-']  # step begins immediately
 
     # adjust project files to target environment
-    -   name: 'gcr.io/cloud-builders/gsutil'
+    -   name: 'gcr.io/openaip-187622/php-nginx:7.3'
         args: ['sh', './set_environment.sh', 'production']
         id: 'set-environment-uris'
         waitFor: ['npm-install']
