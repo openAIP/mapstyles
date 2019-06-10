@@ -22,8 +22,8 @@ uri_to_staging() {
 
     # ./assets
     # https://{s}.tiles.openaip.net/data/openaip/{z}/{x}/{y}.pbf
-    find dist/mapstyles -type f -exec sed -i -e 's/tiles\.openaip\.net/staging\.tiles\.openaip\.net/g' {} \;
-    find dist/mapstyles -type f -exec sed -i -e 's/static\.openaip\.net/staging\.static\.openaip\.net/g' {} \;
+    find dist/maps/styles -type f -exec sed -i -e 's/tiles\.openaip\.net/staging\.tiles\.openaip\.net/g' {} \;
+    find dist/maps/styles -type f -exec sed -i -e 's/static\.openaip\.net/staging\.static\.openaip\.net/g' {} \;
 
     echo "Adjusting URIs to $ENV environment done"
 };
