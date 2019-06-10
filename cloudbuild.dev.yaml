@@ -13,5 +13,11 @@ steps:
         id: 'build-style-default'
         waitFor: ['npm-install']
 
+    # adjust project files to target environment
+    -   name: 'gcr.io/openaip-187622/php-nginx:7.3'
+        args: ['sh', './set_environment.sh', 'development']
+        id: 'set-environment-uris'
+        waitFor: ['build-style-default']
+
 # overwrite the default timeout of 10min and set it to a reasonable time window required for all above steps to complete
 timeout: '1200s'
