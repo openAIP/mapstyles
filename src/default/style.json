@@ -22,7 +22,7 @@
             ]
         }
     },
-    "sprite": "https://static.openaip.net/assets/dist/maps/styles/default/sprite",
+    "sprite": "https://static.openaip.net/maps/styles/default/sprite",
     "glyphs": "mapbox://fonts/mapbox/{fontstack}/{range}.pbf",
     "layers": [
         {
