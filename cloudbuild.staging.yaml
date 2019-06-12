@@ -21,7 +21,8 @@ steps:
 
     # copy styles to bucket
     -   name: 'gcr.io/cloud-builders/gsutil'
-        args: ['cp', '-Z', '-r', '/workspace/dist', 'gs://openaip-build-web-assets/mapstyles/$BRANCH_NAME-$COMMIT_SHA/']
+        args: ['cp', '-Z', '-r', '/workspace/dist/maps',
+               'gs://openaip-build-web-assets/mapstyles/$BRANCH_NAME-$COMMIT_SHA/']
         id: 'copy-styles-to-buckets'
         waitFor: ['set-environment-uris']
 
